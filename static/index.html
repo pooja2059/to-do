@@ -3,12 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>To-Do List</h1>
-  <input type="text" id="taskInput" placeholder="New Task">
-  <button onclick="addTask()">Add</button>
-  <ul id="taskList"></ul>
+  <div class="container">
+    <h1>Your Personal TO_DO <i class="fa-solid fa-clipboard-check"></i></h1>
+    <p>Keep updated regularly</p>
+ 
+     <!-- Add button -->
+    <div style="margin-top: 1rem;">
+      <button class="btn" onclick="addTask()"><i class="fas fa-plus"></i> Add Task</button>
+    </div>
+
+    <!-- Add bar -->
+    <div class="search-bar">
+      <input type="text" id="taskInput" placeholder="Enter a new task" onclick="addTask()">
+      <button><i class="fas fa-plus"></i></button>
+    </div>
+
+
+    <!-- View all button -->
+    <div style="margin-top: 1rem;">
+      <button class="btn" onclick="fetchTasks()"><i class="fas fa-list"></i> View All Tasks</button>
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search tasks..." oninput="filterTasks()">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <!-- Task list -->
+    <ul id="taskList" style="margin-top: 1rem;"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
